@@ -1,0 +1,14 @@
+{
+  "name": "azure-weather",
+  "description": "sample app for azure meetup berlin",
+  "authors": "janekf",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha ./tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "should": "^11.2.1"
+  }
+}

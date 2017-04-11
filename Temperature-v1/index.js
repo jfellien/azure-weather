@@ -1,21 +1,20 @@
+const assert = require("assert");
+
 module.exports = (context, req) => {
-
-
-    context.log('JavaScript HTTP trigger function processed a request.');
     
+    assert.ok(req.body);
+    assert.ok(req.body.city);
+    assert.ok(req.body.temperature);
+    assert.ok(req.body.date);
+    assert.ok(req.body.time);
 
-    if (req.query.name || (req.body && req.body.name)) {
-        context.res = {
-            body: "Hello " + (req.query.name || req.body.name)
-        };
-    }
-    else {
-        context.res = {
-            status: 400,
-            body: "Please pass a name on the query string or in the request body"
-        };
-    }
+    context.bindings.sinkTemperature = req.body;
+
+    context.log(`Temperature in ${ req.body.city } at ${ req.body.time }: ${ req.body.temperature }`);
+    
+    context.res = {
+        body: `Temperature stored`
+    };
+
     context.done();
-
-    
 };

@@ -1,0 +1,29 @@
+{
+  "disabled": false,
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "route":"v1/temperature-at/{date}/in/{city}",
+      "methodes" :[
+        "get"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "sourceTemperatures",
+      "tableName": "DailyTemperatures",
+      "partitionKey": "{city}_{date}",
+      "take": 50,
+      "connection": "azuremeetupstorage_STORAGE",
+      "direction": "in"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}
