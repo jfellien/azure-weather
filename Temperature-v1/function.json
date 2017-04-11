@@ -12,6 +12,13 @@
       "route":"v1/temperature"
     },
     {
+      "type": "queue",
+      "name": "sinkTemperature",
+      "queueName": "temperatures",
+      "connection": "temperatures_QUEUE",
+      "direction": "out"
+    },
+    {
       "type": "http",
       "direction": "out",
       "name": "res"
