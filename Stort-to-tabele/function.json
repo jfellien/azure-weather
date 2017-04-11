@@ -1,0 +1,12 @@
+{
+  "disabled": false,
+  "bindings": [
+    {
+      "name": "sourceTemperature",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "sinkTemperature",
+      "connection": "azuremeetupstorage_STORAGE"
+    }
+  ]
+}

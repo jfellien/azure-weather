@@ -15,7 +15,7 @@
       "type": "queue",
       "name": "sinkTemperature",
       "queueName": "temperatures",
-      "connection": "temperatures_QUEUE",
+      "connection": "azuremeetupstorage_STORAGE",
       "direction": "out"
     },
     {
